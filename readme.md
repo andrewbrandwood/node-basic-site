@@ -1,4 +1,4 @@
-# twitter aggregator build with node.js
+# basic build with node.js and socket.io
 
 ## Installation
 
