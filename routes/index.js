@@ -1,22 +1,25 @@
 var WebsiteHomeController = function (website) {
-
+	var socketId = website.get('socketId');
 	// Public functions
 	this.get = function(request, response) {
 		response.render('index', createModel());
 	};
 
 	var createModel = function (params) {
+		
 		var model = { 
 			viewId: 'wesite-home',
 			controller: 'website-home-controller',
 			title: 'Basic node & socket.io site',
 			user: true,
-			socketId: '1234'
+			socketId: socketId
 		}
-		socketControlls(website, model.socketId);
+		
 		return model;
 
 	}
+
+	socketControlls(website, socketId);
 };
 
 module.exports = function(website) {
@@ -31,7 +34,7 @@ function socketControlls(website, socketId){
 	//////////////////////////////
 	
 	if(typeof io === 'undefined'){
-		var io = website.get('socket').of('/' + socketId);
+		var io = website.get('socket');//.of('/' + socketId);
 	}
 	
 	if(io.TSClient) return;
@@ -40,7 +43,6 @@ function socketControlls(website, socketId){
 		console.log(socketId);
 
 		socket.on('client:basic-call', function(val){
-			console.log(val);
 			//prevent infinite loop
 			if(val > 1) return;
 			val ++;
@@ -52,6 +54,6 @@ function socketControlls(website, socketId){
 		
 		//bradcast to all
 		var val = 'everyone listening gets this';
-		io.emit('server:service-tables-joined', val);
+		io.emit('server:emit', val);
 	});
 }

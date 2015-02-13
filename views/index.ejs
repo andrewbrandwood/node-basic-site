@@ -1,6 +1,7 @@
 <%= include _partials/header.ejs %>
 	<body>
-		<script>var socket = io('/<%= socketId %>');</script>
+		<!--script>var socket = io('/<%= socketId %>');</script-->
+		<script>var socket = io();</script>
 		<h1><%=title%></h1>
 	</body>
 	<script src="/_client/scripts/src/app.js"></script>
