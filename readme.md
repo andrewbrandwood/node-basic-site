@@ -2,6 +2,13 @@
 
 ## Installation
 
+Do one of the following
+
+* Clone the git repo - git@github.com:andrewbrandwood/node-basic-site.git
+* install from bower - bower install node-site-basic
+
+then...  
+
 ### Node (Server side setup).
 
 * Open command prompt (or Terminal on mac).
