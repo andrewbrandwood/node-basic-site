@@ -55,5 +55,10 @@ function socketControlls(website, socketId){
 		//bradcast to all
 		var val = 'everyone listening gets this';
 		io.emit('server:emit', val);
+
+		//disconnect message
+		socket.on('disconnect', function(){
+			console.log('index disconnected');
+		});
 	});
 }
