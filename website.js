@@ -1,7 +1,6 @@
 var express = require('express'),
 	website = express(),
 	http = require('http').Server(website),
-	io = require('socket.io')(http),
 	path = require('path'),
 	logger = require('express-logger'),
 	json = require('express-json'),
@@ -13,8 +12,6 @@ var express = require('express'),
 website.set('port', process.env.PORT || 3000);
 website.set('views', path.join(__dirname, 'views'));
 website.set('view engine', 'ejs');
-website.set('socket', io);
-website.set('socketId', '1234');
 website.use(logger({path: './logs/logfile.txt'}));
 website.use(expressSession({secret: '18dhN7skw9AY82jb',
                  saveUninitialized: true,
