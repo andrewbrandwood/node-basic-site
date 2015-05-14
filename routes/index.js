@@ -9,7 +9,7 @@ var WebsiteHomeController = function (website) {
 		var model = { 
 			viewId: 'wesite-home',
 			controller: 'website-home-controller',
-			title: 'Basic node & socket.io site',
+			title: 'Basic node site',
 			user: true
 		}
 		
