@@ -29,8 +29,7 @@ gulp.task('sass-generate-contents', function () {
 	config.src + '/' + config.dirs.styles + '/_generic/*.scss',
 	config.src + '/' + config.dirs.styles + '/_elements/*.scss',
 	config.src + '/' + config.dirs.styles + '/_objects/*.scss',
-	config.src + '/' + config.dirs.styles + '/_components/*.scss',
-	config.src + '/' + config.dirs.components + '/**/*.scss',
+	config.dirs.components + '/**/*.scss',
 	config.src + '/' + config.dirs.styles + '/_trumps/refresh-overrides.scss'])
 	.pipe(sgc(config.src + '/' + config.dirs.styles + '/main.scss', creds))
 	.pipe(gulp.dest(config.src + '/' + config.dirs.styles));
@@ -42,7 +41,7 @@ gulp.task('sass-generate-contents', function () {
 
 gulp.task('sass:dev', function () {
 	gulp.src(config.src + '/' + config.dirs.styles + '/main.scss')
-			.pipe(plugins.sass({ errLogToConsole: true, includePaths: [config.src + '/' + config.dirs.components], outputStyle: 'compact' }))
+			.pipe(plugins.sass({ errLogToConsole: true, includePaths: [config.dirs.components], outputStyle: 'compact' }))
 			.pipe(plugins.autoprefixer({ browsers: ['> 5%', 'Android 3'] }))
 			.pipe(plugins.pixrem(config.pixelBase))
 			.pipe(gulp.dest(config.dest + '/' + config.dirs.styles));
@@ -54,7 +53,7 @@ gulp.task('sass:dev', function () {
 
 
 gulp.task('watch', function () {
-	gulp.watch([config.src + '/' + config.dirs.styles + '/**/*.scss', config.src + '/' + config.dirs.components + '/**/*.scss'], ['sass:dev']);
+	gulp.watch([config.src + '/' + config.dirs.styles + '/**/*.scss', config.dirs.components + '/**/*.scss'], ['sass:dev']);
 });
 
 
