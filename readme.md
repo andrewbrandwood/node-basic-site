@@ -24,8 +24,8 @@ then...
 * run - npm install
 * run - node website.js
 
-### Grunt (Client side setup).
+### Gulp (Client side setup).
 
 * Open a new command prompt (or Terminal on mac).
-* Navigate to public folder from the root of the website
+* Navigate to the project root.
 * run - gulp
