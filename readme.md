@@ -32,7 +32,7 @@ then...
 
 ### 3rd party plugin notes.
 
-# sass-generate-contents
+#### sass-generate-contents
 To enable the compiling of a list of contents in the main scss file and to import all the correct files.  It is required to have a comment at the top of each sass file. 
 
 anything on the first line other than a double slash // will result in the file being ignored from the contents and the imports.  
