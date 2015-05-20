@@ -1,4 +1,4 @@
-# basic build with node.js and socket.io
+# basic build with node.js
 
 ## Installation
 
@@ -21,7 +21,3 @@ then...
 * Open a new command prompt (or Terminal on mac).
 * Navigate to public folder from the root of the website
 * run - grunt
-
-
-### Note: issue with namespacing
-This is using express 4.11.2
