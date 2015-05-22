@@ -1,6 +1,6 @@
 # Basic site setup build with node.js
 
-This repository sets you up with a ready to run node.js website using express.
+This repository sets you up with a ready to run [node.js](https://nodejs.org) website using express.
 
 The site uses [Gulp](https://www.google.com) as a task runner.
 
@@ -24,7 +24,7 @@ then...
 * run - npm install
 * run - node website.js
 
-### Grunt (Client side setup).
+### Gulp (Client side setup).
 
 * Open a new command prompt (or Terminal on mac).
 * Navigate to public folder from the root of the website
