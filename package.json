@@ -23,6 +23,6 @@
     "express-method-override": "0.0.3",
     "express-session": "^1.10.2",
     "gulp-load-plugins": "^0.10.0",
-    "gulp-sass-generate-contents": "0.0.1"
+    "gulp-sass-generate-contents": "0.0.2"
   }
 }
