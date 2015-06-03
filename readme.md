@@ -13,7 +13,7 @@ This setup is purposely light of gulp tasks and does the very basics to get you 
 Do one of the following
 
 * Clone the git repo - git@github.com:andrewbrandwood/node-basic-site.git
-* install from bower - bower install node-site-basic
+* install from bower - bower install node-basic-site
 
 then...	  
 
