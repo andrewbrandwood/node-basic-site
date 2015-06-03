@@ -3,7 +3,7 @@
 
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
-    sgc = require('sass-generate-contents'),
+    sgc = require('gulp-sass-generate-contents'),
 	config = require('./_config/project.json'),
 	creds = require('./_config/creds.json');
 
