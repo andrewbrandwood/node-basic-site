@@ -4,6 +4,7 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
     sgc = require('gulp-sass-generate-contents'),
+    runSeq = require('run-sequence'),
 	config = require('./_config/project.json'),
 	creds = require('./_config/creds.json');
 
@@ -59,3 +60,10 @@ gulp.task('watch', function () {
 
 
 gulp.task('default', ['sass-generate-contents', 'sass:dev', 'watch']);
+
+
+gulp.task('default', function (cb) {
+	runSeq(['sass-generate-contents'],['sass:dev', 'watch'], cb);
+});
+
+
