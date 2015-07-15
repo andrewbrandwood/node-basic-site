@@ -1,6 +1,6 @@
 {
   "name": "node-basic-site",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A basic node site setup with gulp",
   "repository": {
     "type": "git",
