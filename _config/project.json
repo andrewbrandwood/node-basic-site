@@ -8,5 +8,6 @@
         "components": 	"views",
         "webfonts": 	"webfonts",
         "reports": 		"reports"
-    }
+    },
+    "itcss": "_source/styles/_settings/*.scss, _source/styles/_tools/_tools.mixins.scss, _source/styles/_tools/_tools.functions.scss, _source/styles/_tools/*.scss, _source/styles/_scope/*.scss, _source/styles/_generic/*.scss, _source/styles/_elements/*.scss, _source/styles/_objects/*.scss, partials/styles/**/*.scss, _source/styles/_trumps/*.scss"
 }

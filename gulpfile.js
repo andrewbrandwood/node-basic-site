@@ -22,16 +22,7 @@ gulp.task('scripts:lint', function () {
 \* ============================================================ */
 
 gulp.task('sass-generate-contents', function () {
-	gulp.src([config.src + '/' + config.dirs.styles + '/_settings/*.scss',
-	config.src + '/' + config.dirs.styles + '/_tools/_tools.mixins.scss',
-	config.src + '/' + config.dirs.styles + '/_tools/_tools.functions.scss',
-	config.src + '/' + config.dirs.styles + '/_tools/*.scss',
-	config.src + '/' + config.dirs.styles + '/_scope/*.scss',
-	config.src + '/' + config.dirs.styles + '/_generic/*.scss',
-	config.src + '/' + config.dirs.styles + '/_elements/*.scss',
-	config.src + '/' + config.dirs.styles + '/_objects/*.scss',
-	config.dirs.components + '/**/*.scss',
-	config.src + '/' + config.dirs.styles + '/_trumps/refresh-overrides.scss'])
+	gulp.src([config.itcss])
 	.pipe(sgc(config.src + '/' + config.dirs.styles + '/main.scss', creds))
 	.pipe(gulp.dest(config.src + '/' + config.dirs.styles));
 });

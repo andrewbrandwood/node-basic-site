@@ -2,6 +2,7 @@
 a {
 	color: $c-links;
 	text-decoration: none;
+	font-weight: bold;
 	&:hover {
 		text-decoration: underline;
 	}
