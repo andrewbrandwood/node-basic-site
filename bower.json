@@ -1,14 +1,13 @@
 {
   "name": "node-site-basic",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "authors": [
     "andrewbrandwood <andrew@brandwood.com>"
   ],
-  "description": "a very basic setup of a node.js based website using express and socket.io",
+  "description": "A very basic setup of a node.js based website using express",
   "main": "website.js",
   "keywords": [
     "node.js",
-    "socket.io",
     "express"
   ],
   "license": "MIT",
