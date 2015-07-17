@@ -4,9 +4,11 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
     sgc = require('gulp-sass-generate-contents'),
+    autoprefixer = require('autoprefixer-core'),
+    postcss = require('gulp-postcss'),
     runSeq = require('run-sequence'),
-	config = require('./_config/project.json'),
-	creds = require('./_config/creds.json');
+		config = require('./_config/project.json'),
+		creds = require('./_config/creds.json');
 
 /* ============================================================ *\
     SCRIPTS / JS
@@ -34,7 +36,7 @@ gulp.task('sass-generate-contents', function () {
 gulp.task('sass:dev', function () {
 	gulp.src(config.src + '/' + config.dirs.styles + '/main.scss')
 			.pipe(plugins.sass({ errLogToConsole: true, includePaths: [config.dirs.components], outputStyle: 'compact' }))
-			.pipe(plugins.autoprefixer({ browsers: ['> 5%', 'Android 3'] }))
+			.pipe(postcss([autoprefixer({ browsers: ['> 5%', 'Android 3'] })]))
 			.pipe(plugins.pixrem(config.pixelBase))
 			.pipe(gulp.dest(config.dest + '/' + config.dirs.styles));
 });

@@ -1,6 +1,6 @@
 {
   "name": "node-basic-site",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "A basic node site setup with gulp",
   "repository": {
     "type": "git",
@@ -20,15 +20,17 @@
     "run-sequence": "^1.1.0"
   },
   "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
     "body-parser": "^1.11.0",
+    "chai": "^3.0.0",
     "ejs": "^2.2.4",
     "express-json": "^1.0.0",
     "express-logger": "0.0.3",
     "express-method-override": "0.0.3",
     "express-session": "^1.10.2",
     "gulp-load-plugins": "^0.10.0",
+    "gulp-postcss": "^5.1.9",
     "gulp-sass-generate-contents": "0.0.2",
-    "chai": "^3.0.0",
     "karma": "^0.12.37",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.2.0",
