@@ -4,11 +4,10 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
     sgc = require('gulp-sass-generate-contents'),
-    autoprefixer = require('autoprefixer-core'),
-    postcss = require('gulp-postcss'),
     runSeq = require('run-sequence'),
-		config = require('./_config/project.json'),
-		creds = require('./_config/creds.json');
+	config = require('./_config/project.json'),
+	creds = require('./_config/creds.json'),
+	srcStyles = config.src + '/' + config.dirs.styles;
 
 /* ============================================================ *\
     SCRIPTS / JS
@@ -24,7 +23,17 @@ gulp.task('scripts:lint', function () {
 \* ============================================================ */
 
 gulp.task('sass-generate-contents', function () {
-	gulp.src([config.itcss])
+	return gulp.src([
+		srcStyles + '/_settings/*.scss', 
+		srcStyles + '/_tools/_tools.mixins.scss', 
+		srcStyles + '/_tools/_tools.functions.scss', 
+		srcStyles + '/_tools/*.scss', 
+		srcStyles + '/_scope/*.scss', 
+		srcStyles + '/_generic/*.scss', 
+		srcStyles + '/_elements/*.scss', 
+		srcStyles + '/_objects/*.scss', 
+		'views/_partials/**/*.scss', 
+		srcStyles + '/_trumps/*.scss'])
 	.pipe(sgc(config.src + '/' + config.dirs.styles + '/main.scss', creds))
 	.pipe(gulp.dest(config.src + '/' + config.dirs.styles));
 });
@@ -34,9 +43,9 @@ gulp.task('sass-generate-contents', function () {
 \* ============================================================ */
 
 gulp.task('sass:dev', function () {
-	gulp.src(config.src + '/' + config.dirs.styles + '/main.scss')
+	return gulp.src(config.src + '/' + config.dirs.styles + '/main.scss')
 			.pipe(plugins.sass({ errLogToConsole: true, includePaths: [config.dirs.components], outputStyle: 'compact' }))
-			.pipe(postcss([autoprefixer({ browsers: ['> 5%', 'Android 3'] })]))
+			.pipe(plugins.autoprefixer({ browsers: ['> 5%', 'Android 3'] }))
 			.pipe(plugins.pixrem(config.pixelBase))
 			.pipe(gulp.dest(config.dest + '/' + config.dirs.styles));
 });
@@ -49,11 +58,6 @@ gulp.task('sass:dev', function () {
 gulp.task('watch', function () {
 	gulp.watch([config.src + '/' + config.dirs.styles + '/**/*.scss', config.dirs.components + '/**/*.scss'], ['sass:dev']);
 });
-
-
-
-gulp.task('default', ['sass-generate-contents', 'sass:dev', 'watch']);
-
 
 gulp.task('default', function (cb) {
 	runSeq(['sass-generate-contents'],['sass:dev', 'watch'], cb);
